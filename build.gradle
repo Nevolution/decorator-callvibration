@@ -1,0 +1,10 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+}
+
+dependencies {
+    debugImplementation project(':sdk')
+    releaseImplementation 'com.oasisfeng.nevo:sdk:1.0.0'
+}
