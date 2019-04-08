@@ -16,7 +16,7 @@
   -->
 
 <resources>
-    <string name="decorator_call_vibrator_label">Nevo - Call Vibration</string>
-    <string name="decorator_call_vibrator_title">Call Vibration</string>
-    <string name="decorator_call_vibrator_description">Vibrate when outgoing call is answered. (requires AOSP-like dialer app with ongoing notification)\n(No visual effects)</string>
+    <string name="decorator_call_vibrator_label">女娲石 - 去电接听震动</string>
+    <string name="decorator_call_vibrator_title">去电接听震动</string>
+    <string name="decorator_call_vibrator_description">当拨出的电话被对方接听时震动提醒。（仅支持类原生系统带有通话通知的拨号应用）\n（无视觉效果）</string>
 </resources>
