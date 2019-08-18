@@ -34,7 +34,12 @@ public class CallVibratorDecorator extends NevoDecoratorService {
 	private static final long VIBRATOR_DURATION = 500;
 	private static final long MAX_DELAY_TO_VIBRATE = 2000;
 
-	@Override public void apply(final MutableStatusBarNotification evolving) {
+	@Override public boolean apply(final MutableStatusBarNotification evolving) {
+		process(evolving);
+		return false;
+	}
+
+	private void process(final MutableStatusBarNotification evolving) {
 		if (! evolving.isOngoing()) return;
 		final TelephonyManager tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
 		if (tm == null) return;
@@ -53,8 +58,9 @@ public class CallVibratorDecorator extends NevoDecoratorService {
 		if (vibrator != null) vibrator.vibrate(VIBRATOR_DURATION);
 	}
 
-	@Override protected void onNotificationRemoved(final String key, final int reason) {
+	@Override protected boolean onNotificationRemoved(final String key, final int reason) {
 		mIncomingCall = false;
+		return false;
 	}
 
 	private boolean mIncomingCall;
